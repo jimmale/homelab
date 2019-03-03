@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  telegraf:
+    restart: unless-stopped
+    image: telegraf:1.9.5
+    build:
+      context: ./
+      args:
+        branch: 1.9.5
+    ports:
+      - "8087:8087"
+    expose:
+      - "8087"
+    volumes:
+      - /proc:/host/proc:ro
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    environment:
+      - HOST_PROC=/host/proc
