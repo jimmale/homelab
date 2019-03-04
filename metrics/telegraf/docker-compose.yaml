@@ -18,3 +18,4 @@ services:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
       - HOST_PROC=/host/proc
+      - HOSTNAME
