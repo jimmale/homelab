@@ -14,7 +14,7 @@ services:
       - "8087"
     volumes:
       - /proc:/host/proc:ro
-      - /var/run/utmp:/var/run/utmp
+      - /var/run/utmp:/var/run/utmp:ro
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
       - HOST_PROC=/host/proc
