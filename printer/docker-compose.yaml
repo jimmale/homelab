@@ -12,3 +12,5 @@ services:
       - "631"
     volumes:
       - /dev/bus/usb/001/012:/dev/bus/usb/001/012
+    stdin_open: true
+    tty: true
